@@ -8,15 +8,13 @@
         </div>
 
         <div>
-            <p>published: January 8th, 2018, 12:13</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Once upon a time in '94</p>
-        </div>
-
-        <div>
-            <p>published: January 8th, 2018, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Justin made no money and life sure was slow</p>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
         </div>
     </body>
 </html>
